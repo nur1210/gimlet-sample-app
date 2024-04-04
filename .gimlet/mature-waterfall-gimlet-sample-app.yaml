@@ -1,0 +1,18 @@
+app: gimlet-sample-app
+env: mature-waterfall
+namespace: default
+chart:
+  repository: https://chart.onechart.dev
+  name: onechart
+  version: 0.64.0
+values:
+  containerPort: 80
+  gitRepository: nur1210/gimlet-sample-app
+  gitSha: '{{ .SHA }}'
+  image:
+    repository: ghcr.io/nur1210/gimlet-sample-app
+    tag: '{{ .SHA }}'
+  imagePullSecrets: []
+  replicas: 1
+  resources:
+    ignoreLimits: true
